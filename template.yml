@@ -77,8 +77,8 @@ Resources:
           FromPort: 443
           ToPort: 443
         - IpProtocol: tcp
-          FromPort: 22
-          ToPort: 22
+          FromPort: 3389
+          ToPort: 3389
           CidrIp: 0.0.0.0/0 # Allow HTTPS traffic from anywhere
       SecurityGroupEgress:
         - IpProtocol: -1
