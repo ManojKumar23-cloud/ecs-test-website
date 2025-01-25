@@ -66,7 +66,7 @@ Resources:
   MySecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescription: Allow HTTP and HTTPS traffic
+      GroupDescription: Allow HTTP, SSH and HTTPS traffic
       VpcId: !Ref MyVPC
       SecurityGroupIngress:
         - IpProtocol: tcp
@@ -76,6 +76,9 @@ Resources:
         - IpProtocol: tcp
           FromPort: 443
           ToPort: 443
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
           CidrIp: 0.0.0.0/0 # Allow HTTPS traffic from anywhere
       SecurityGroupEgress:
         - IpProtocol: -1
